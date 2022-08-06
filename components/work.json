@@ -1,0 +1,35 @@
+[
+    {
+        "backgroundColor": "rgb(37, 37, 37)",
+        "header": "Elton Pereira",
+        "shortDescription": "Web design and development for a serial entrepreneur and angel investor developing a rap song!",
+        "tags": [
+            "UI",
+            "Web"
+        ],
+        "mockup": "/eltonPereiraSite.png",
+        "link": "https://eltonpereira.com/"
+    },
+    {
+        "backgroundColor": "rgb(234, 60, 83)",
+        "header": "Bon Sushi",
+        "shortDescription": "Website Re-Design, development and optimisation for my favorite local restaurant Bon Sushi.",
+        "tags": [
+            "UI",
+            "Web"
+        ],
+        "mockup": "/BonSushiSite.png",
+        "link": "https://bon-sushi.netlify.app/"
+    },
+    {
+        "backgroundColor": "rgb(17, 24, 39)",
+        "header": "UIJam",
+        "shortDescription": "UIjam lets you participate in design competitions to see who is the best designer. I designed, optimised and coded it!",
+        "tags": [
+            "UI",
+            "App"
+        ],
+        "mockup": "/UIJamSite.png",
+        "link": "https://uijam.vercel.app/"
+    }
+]

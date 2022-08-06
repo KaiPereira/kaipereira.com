@@ -10,7 +10,7 @@ export default function WorkCard(props) {
         )
     })
     return (
-        <Link href={`/work/${props.link}`}>
+        <a href={props.link} target="_blank" rel="noreferrer">
             <div className="workCard" style={{backgroundColor: props.backgroundColor}} onMouseEnter={() => props.cursorEnterBlob(props.backgroundColor)} onMouseLeave={props.cursorLeave}>
                 <div>
                     <p className="workCardHeader">{props.header}</p>
@@ -21,6 +21,6 @@ export default function WorkCard(props) {
                 </div>
                 <img src={props.mockup} alt={`${props.header} Mockup`} />
             </div>
-        </Link>
+        </a>
     )
 }

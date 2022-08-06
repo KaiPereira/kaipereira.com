@@ -3,6 +3,7 @@ import Nav from "../components/Nav"
 import CustomCursor from "../components/CustomCursor"
 import Footer from "../components/Footer";
 import ContactMain from "../components/ContactMain";
+import { motion } from "framer-motion"
 
 
 export default function Contact() {
@@ -21,8 +22,14 @@ export default function Contact() {
         changeCursorVariant("default")
     }
 
+    const animationConfiguration = {
+        initial: { opacity: 0 },
+        animate: { opacity: 1 },
+        exit: { opacity: 0 },
+    };
+
     return (
-        <>
+        <motion.div variants={animationConfiguration} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.5 }}>
             <Nav 
                 cursorEnter={cursorEnter}
                 cursorLeave={cursorLeave}
@@ -42,6 +49,6 @@ export default function Contact() {
                 cursorVariant={cursorVariant}
                 cursorColor={cursorColor}
             />
-        </>
+        </motion.div>
     )
 }

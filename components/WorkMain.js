@@ -1,12 +1,32 @@
 import React from "react"
 import EltonPereiraCard from "./subcomponents/WorkCard"
+import works from "./work.json"
 
 export default function WorkMain(props) {
     const [workFilter, changeWorkFilter] = React.useState("all")
+    const [workElements, changeWorkElements] = React.useState()
 
     function changeWorkFilterFunction(filter) {
         changeWorkFilter(filter)
     }
+
+    React.useEffect(() => {
+        changeWorkElements(works.map(work => {
+            if (work.tags.includes(workFilter) || workFilter == "all")
+            return (
+                <EltonPereiraCard 
+                    backgroundColor={work.backgroundColor}
+                    header={work.header}
+                    shortDescription={work.shortDescription}
+                    tags={work.tags}
+                    mockup={work.mockup}
+                    cursorEnterBlob={props.cursorEnterBlob} 
+                    cursorLeave={props.cursorLeave}
+                    link={work.link}
+                />
+            )
+        }))
+    }, [workFilter])
 
     return (
         <main>
@@ -20,35 +40,16 @@ export default function WorkMain(props) {
                             <button className="workMainFilter" onClick={() => changeWorkFilterFunction("all")} style={{background: workFilter == "all" && "#161616", color: workFilter == "all" && "#FFF"}} onMouseEnter={props.cursorEnter} onMouseLeave={props.cursorLeave}>
                                 <p>All</p>
                             </button>
-                            <button className="workMainFilter" onClick={() => changeWorkFilterFunction("websites")} style={{background: workFilter == "websites" && "#161616", color: workFilter == "websites" && "#FFF"}} onMouseEnter={props.cursorEnter} onMouseLeave={props.cursorLeave}>
-                                <p>Websites</p>
+                            <button className="workMainFilter" onClick={() => changeWorkFilterFunction("Web")} style={{background: workFilter == "Web" && "#161616", color: workFilter == "Web" && "#FFF"}} onMouseEnter={props.cursorEnter} onMouseLeave={props.cursorLeave}>
+                                <p>Web</p>
                             </button>
-                            <button className="workMainFilter" onClick={() => changeWorkFilterFunction("apps")} style={{background: workFilter == "apps" && "#161616", color: workFilter == "apps" && "#FFF"}} onMouseEnter={props.cursorEnter} onMouseLeave={props.cursorLeave}>
-                                <p>Apps</p>
+                            <button className="workMainFilter" onClick={() => changeWorkFilterFunction("App")} style={{background: workFilter == "App" && "#161616", color: workFilter == "App" && "#FFF"}} onMouseEnter={props.cursorEnter} onMouseLeave={props.cursorLeave}>
+                                <p>App</p>
                             </button>
                         </div>
                     </div>
                     <div className="workCards">
-                        <EltonPereiraCard 
-                            backgroundColor="rgb(37, 37, 37)"
-                            header="Elton Pereira"
-                            shortDescription="Web design and development for a serial entrepreneur and angel investor developing a rap song!"
-                            tags={["UI", "Web"]}
-                            mockup="/eltonPereiraSite.png"
-                            cursorEnterBlob={props.cursorEnterBlob} 
-                            cursorLeave={props.cursorLeave}
-                            link="eltonpereira"
-                        />
-                        <EltonPereiraCard 
-                            backgroundColor="rgb(37, 37, 37)"
-                            header="Elton Pereira"
-                            shortDescription="Web design and development for a serial entrepreneur and angel investor developing a rap song!"
-                            tags={["UI", "Web"]}
-                            mockup="/eltonPereiraSite.png"
-                            cursorEnterBlob={props.cursorEnterBlob} 
-                            cursorLeave={props.cursorLeave}
-                            link="eltonpereira"
-                        />
+                        {workElements}
                     </div>
                 </div>
             </section>

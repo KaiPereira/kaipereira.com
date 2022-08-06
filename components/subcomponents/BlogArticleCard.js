@@ -10,7 +10,7 @@ export default function BlogArticleCard(props) {
     })
 
     return (
-        <Link href={`/blog/${props.link}`}>
+        <a href={`https://kai-pereira.hashnode.dev/${props.link}`} target="_blank" rel="noreferrer">
             <div className="blogArticleCardHover">
                 <div className="blogArticleCard">
                     <img src={props.thumbnail} className="articleCardThumbnail" alt="Blog Article Card Thumbnail" />
@@ -21,6 +21,6 @@ export default function BlogArticleCard(props) {
                     </div>
                 </div>
             </div>
-        </Link>
+        </a>
     )
 }

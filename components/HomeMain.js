@@ -2,18 +2,19 @@ import React from "react"
 import EltonPereiraCard from "./subcomponents/WorkCard"
 import BlogArticleCard from "./subcomponents/BlogArticleCard"
 import Link from "next/link"
+import works from "./work.json"
 
 export default function HomeMain(props) {
     const [windowPlacement, changeWindowPlacement] = React.useState()
     const [carouselPosition, changeCarouselPosition] = React.useState(0)
     const [blogArticles, changeBlogArticles] = React.useState()
+    const [workElements, changeWorkElements] = React.useState()
 
     // Services Scroll Effect
     React.useEffect(() => {
         function windowMove() {
             const scrollDistance = window.scrollY
             changeWindowPlacement(scrollDistance)
-            console.log(scrollDistance)
         }
 
         window.addEventListener("scroll", windowMove)
@@ -23,6 +24,24 @@ export default function HomeMain(props) {
         }
     }, [])
 
+    // Works
+
+    React.useEffect(() => {
+        changeWorkElements(works.map(work => {
+            return (
+                <EltonPereiraCard 
+                    backgroundColor={work.backgroundColor}
+                    header={work.header}
+                    shortDescription={work.shortDescription}
+                    tags={work.tags}
+                    mockup={work.mockup}
+                    cursorEnterBlob={props.cursorEnterBlob} 
+                    cursorLeave={props.cursorLeave}
+                    link={work.link}
+                />
+            )
+        }))
+    }, [])
 
     // Blog Articles
     React.useEffect(() => {
@@ -69,16 +88,7 @@ export default function HomeMain(props) {
                 <div className="featuredHome">
                     <h2>Featured</h2>
                     <div className="featuredHomeCards">
-                        <EltonPereiraCard 
-                            backgroundColor="rgb(37, 37, 37)"
-                            header="Elton Pereira"
-                            shortDescription="Web design and development for a serial entrepreneur and angel investor developing a rap song!"
-                            tags={["UI", "Web"]}
-                            mockup="/eltonPereiraSite.png"
-                            cursorEnterBlob={props.cursorEnterBlob} 
-                            cursorLeave={props.cursorLeave}
-                            link="eltonpereira"
-                        />
+                        {workElements}
                     </div>
                     <div className="featuredWorkButtonAlign">
                         <Link href="/work">
@@ -107,7 +117,7 @@ export default function HomeMain(props) {
                 </div>
             </section>
             <section className="servicesHome">
-                <div className="servicesHomeAlign1" style={{right: windowPlacement - (3500)}}>
+                <div className="servicesHomeAlign1" style={{right: windowPlacement - (4000)}}>
                     <p>Web Development</p>
                     <p>Branding</p>
                     <p>E-Commerce</p>
@@ -119,7 +129,7 @@ export default function HomeMain(props) {
                     <p>Mobile Development</p>
                     <p>Branding</p>
                 </div>
-                <div className="servicesHomeAlign2" style={{left: windowPlacement - (3800)}}>
+                <div className="servicesHomeAlign2" style={{left: windowPlacement - (4200)}}>
                     <p>Web Development</p>
                     <p>E-Commerce</p>
                     <p>CMS</p>

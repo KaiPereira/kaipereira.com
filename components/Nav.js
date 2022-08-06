@@ -58,16 +58,16 @@ export default function Nav(props) {
                     </Link>
                     <div className="dropdownElementsSocials">
                         <a href="https://www.linkedin.com/notifications/" target="_blank" rel="noreferrer noopener" onMouseEnter={props.cursorEnter} onMouseLeave={props.cursorLeave}>
-                            <i class="fa-brands fa-linkedin-in"></i>
+                            <i className="fa-brands fa-linkedin-in"></i>
                         </a>
                         <a href="https://www.behance.net/kai-pereira" target="_blank" rel="noreferrer noopener" onMouseEnter={props.cursorEnter} onMouseLeave={props.cursorLeave}>
-                            <i class="fa-brands fa-behance"></i>
+                            <i className="fa-brands fa-behance"></i>
                         </a>
                         <a href="https://kai-pereira.hashnode.dev/" target="_blank" rel="noreferrer noopener" onMouseEnter={props.cursorEnter} onMouseLeave={props.cursorLeave}>
-                            <i class="fa-brands fa-hashnode"></i>
+                            <i className="fa-brands fa-hashnode"></i>
                         </a>
                         <a href="https://github.com/KaiPereira" target="_blank" rel="noreferrer noopener" onMouseEnter={props.cursorEnter} onMouseLeave={props.cursorLeave}>
-                            <i class="fa-brands fa-github"></i>
+                            <i className="fa-brands fa-github"></i>
                         </a>
                     </div>
                 </div>

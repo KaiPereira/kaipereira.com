@@ -4,6 +4,7 @@ import CustomCursor from "../components/CustomCursor"
 import Footer from "../components/Footer";
 import BlogMain from "../components/BlogMain";
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
+import { motion } from "framer-motion"
 
 
 export default function Blog({ posts }) {
@@ -21,8 +22,15 @@ export default function Blog({ posts }) {
     function cursorLeave() {
         changeCursorVariant("default")
     }
+
+    const animationConfiguration = {
+        initial: { opacity: 0 },
+        animate: { opacity: 1 },
+        exit: { opacity: 0 },
+    };
+
     return (
-        <>
+        <motion.div variants={animationConfiguration} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.5 }}>
             <Nav 
                 cursorEnter={cursorEnter}
                 cursorLeave={cursorLeave}
@@ -42,7 +50,7 @@ export default function Blog({ posts }) {
                 cursorVariant={cursorVariant}
                 cursorColor={cursorColor}
             />
-        </>
+        </motion.div>
     )
 }
 
