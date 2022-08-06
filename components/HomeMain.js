@@ -27,7 +27,7 @@ export default function HomeMain(props) {
     // Works
 
     React.useEffect(() => {
-        changeWorkElements(works.map(work => {
+        changeWorkElements(works.map((work, index) => {
             return (
                 <EltonPereiraCard 
                     backgroundColor={work.backgroundColor}
@@ -38,6 +38,7 @@ export default function HomeMain(props) {
                     cursorEnterBlob={props.cursorEnterBlob} 
                     cursorLeave={props.cursorLeave}
                     link={work.link}
+                    key={index}
                 />
             )
         }))
@@ -46,7 +47,7 @@ export default function HomeMain(props) {
     // Blog Articles
     React.useEffect(() => {
 
-        changeBlogArticles(props.posts.map(post => {
+        changeBlogArticles(props.posts.map((post, index) => {
             return (
                 <BlogArticleCard 
                     thumbnail={post.coverImage}
@@ -54,6 +55,7 @@ export default function HomeMain(props) {
                     date={post.dateAdded}
                     time="3 min read"
                     link={post.slug}
+                    key={index}
                 />
             )
         }))
@@ -106,7 +108,7 @@ export default function HomeMain(props) {
                 <div className="aboutHome">
                     <img src="/photo.png" alt="Photo of Me" className="aboutHomePhoto" />
                     <div className="aboutHomeInfo">
-                        <h3>Hi! I'm Kai</h3>
+                        <h3>Hi! I&apos;m Kai</h3>
                         <p className="aboutHomeInfoDescription">I’m a passionate fullstack developer and UI/UX Designer based in Victoria, BC! I love solving hard problems and transfering them into beautiful and functional solutions!<br/><br/>My interest in web development and design started in the summer of 2021 and since then I have worked extremely hard to become a fantastic developer and designer!</p>
                         <Link href="/about">
                             <button onMouseEnter={props.cursorEnter} onMouseLeave={props.cursorLeave}>
@@ -151,10 +153,10 @@ export default function HomeMain(props) {
                     <div className="blogArticleArrowsAlign">
                         <div className="blogArticleArrows">
                             <div className="blogArticleArrow" onMouseEnter={props.cursorEnter} onMouseLeave={props.cursorLeave} onClick={() => moveCarousel("backwards")}>
-                                <i class="fa-solid fa-angle-left"></i>
+                                <i className="fa-solid fa-angle-left"></i>
                             </div>
                             <div className="blogArticleArrow" onMouseEnter={props.cursorEnter} onMouseLeave={props.cursorLeave} onClick={() => moveCarousel("forward")}>
-                                <i class="fa-solid fa-angle-right"></i>
+                                <i className="fa-solid fa-angle-right"></i>
                             </div>
                         </div>
                     </div>

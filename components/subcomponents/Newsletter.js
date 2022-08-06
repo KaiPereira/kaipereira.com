@@ -8,7 +8,7 @@ export default function Newsletter() {
             <div className="blogNewsletterInputAlign">
                 <input type="text" className="blogNewsletterInput" placeholder="Email Address" />
                 <div className="blogNewsletterInputEnterAlign">
-                    <button className="blogNewsletterInputEnter"><p>Submit</p><i class="fa-solid fa-paper-plane"></i></button>
+                    <button className="blogNewsletterInputEnter"><p>Submit</p><i className="fa-solid fa-paper-plane"></i></button>
                 </div>
             </div>
         </div>

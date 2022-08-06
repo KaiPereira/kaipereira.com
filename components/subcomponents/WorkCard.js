@@ -2,9 +2,9 @@ import React from "react"
 import Link from "next/link"
 
 export default function WorkCard(props) {
-    const tagElements = props.tags.map(tag => {
+    const tagElements = props.tags.map((tag, index) => {
         return (
-            <div className="tagContainer">
+            <div className="tagContainer" key={index}>
                 <p>{tag}</p>
             </div>
         )

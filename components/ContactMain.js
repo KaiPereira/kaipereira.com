@@ -22,7 +22,7 @@ export default function ContactMain(props) {
                 <div className="contact">
                     <div className="contactText">
                         <p className="contactTextSubHeader">Contact</p>
-                        <h1>Let's Talk!</h1>
+                        <h1>Let&apos;s Talk!</h1>
                         <p className="contactTextDescription">Send me a message through the form or even contact me directly at kaipereira2020@gmail.com</p>
                     </div>
                     <form className="contactForm" onSubmit={sendEmail} ref={form}>

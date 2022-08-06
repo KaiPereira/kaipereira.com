@@ -11,7 +11,7 @@ export default function WorkMain(props) {
     }
 
     React.useEffect(() => {
-        changeWorkElements(works.map(work => {
+        changeWorkElements(works.map((work, index) => {
             if (work.tags.includes(workFilter) || workFilter == "all")
             return (
                 <EltonPereiraCard 
@@ -23,6 +23,7 @@ export default function WorkMain(props) {
                     cursorEnterBlob={props.cursorEnterBlob} 
                     cursorLeave={props.cursorLeave}
                     link={work.link}
+                    key={index}
                 />
             )
         }))

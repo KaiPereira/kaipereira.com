@@ -21,16 +21,16 @@ export default function Footer(props) {
                 </div>
                 <div className="footerElementsSocials">
                     <a href="https://www.linkedin.com/in/kai-pereira-ba5632237/" target="_blank" rel="noopener noreferrer" className="footerElementsSocial" onMouseEnter={props.cursorEnter} onMouseLeave={props.cursorLeave}>
-                        <i class="fa-brands fa-linkedin-in"></i>
+                        <i className="fa-brands fa-linkedin-in"></i>
                     </a>
                     <a href="https://www.behance.net/kai-pereira" target="_blank" rel="noopener noreferrer" className="footerElementsSocial" onMouseEnter={props.cursorEnter} onMouseLeave={props.cursorLeave}>
-                        <i class="fa-brands fa-behance"></i>
+                        <i className="fa-brands fa-behance"></i>
                     </a>
                     <a href="https://kai-pereira.hashnode.dev/" target="_blank" rel="noopener noreferrer" className="footerElementsSocial" onMouseEnter={props.cursorEnter} onMouseLeave={props.cursorLeave}>
-                        <i class="fa-brands fa-hashnode"></i>
+                        <i className="fa-brands fa-hashnode"></i>
                     </a>
                     <a href="https://github.com/KaiPereira" target="_blank" rel="noopener noreferrer" className="footerElementsSocial" onMouseEnter={props.cursorEnter} onMouseLeave={props.cursorLeave}>
-                        <i class="fa-brands fa-github"></i>
+                        <i className="fa-brands fa-github"></i>
                     </a>
                 </div>
             </div>
