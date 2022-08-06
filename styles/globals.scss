@@ -54,6 +54,13 @@ $white: #FFF;
 }
 
 
+// Custom selection
+
+::selection {
+	background: #000;
+	color: $white;
+}
+
 // Custom Cursor
 
 .customCursor {
