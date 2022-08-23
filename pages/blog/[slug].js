@@ -31,7 +31,7 @@ export default function BlogArticle(post) {
 
 
     return (
-        <motion.div variants={animationConfiguration} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.5 }}>
+        <motion.div variants={animationConfiguration} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.75 }}>
             <Nav 
                 cursorEnter={cursorEnter}
                 cursorLeave={cursorLeave}

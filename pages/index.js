@@ -29,7 +29,7 @@ export default function Home({ posts, isFirstMount }) {
   };
 
   return (
-    <motion.div variants={!isFirstMount && animationConfiguration} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.5 }} className="opacityPageTransition">
+    <motion.div variants={!isFirstMount && animationConfiguration} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.75 }} className="opacityPageTransition">
       <Nav 
         cursorEnter={cursorEnter}
         cursorLeave={cursorLeave}

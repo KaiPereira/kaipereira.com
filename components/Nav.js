@@ -15,7 +15,9 @@ export default function Nav(props) {
     return (
         <>
             <nav>
-                <p className="navigationHeader">Kai Pereira</p>
+                <Link href="/">
+                    <a className="navigationHeader" onMouseEnter={props.cursorEnter} onMouseLeave={props.cursorLeave}>Kai Pereira</a>
+                </Link>
                 <div className="navigationElements">
                     <Link href="/">
                         <a className="navigationElement" onMouseEnter={props.cursorEnter} onMouseLeave={props.cursorLeave}>Home</a>
