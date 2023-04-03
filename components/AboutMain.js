@@ -9,7 +9,7 @@ export default function AboutMain(props) {
                     <img src="/photo.png" alt="Photo of Me" className="aboutPhoto" />
                     <div className="aboutInfo">
                         <h1>Hi! I&apos;m Kai</h1>
-                        <p className="aboutInfoDescription">I’m a passionate fullstack developer and UI/UX Designer based in Victoria, BC! I love solving hard problems and transfering them into beautiful and functional solutions!<br /><br />My interest in web development and design started in the summer of 2021 and since then I have worked extremely hard to become a fantastic developer and designer!<br /><br />Currently I am working as an active freelance for a multitude of services like web design, development and app development!<br /><br />When I’m not staring at my computer I am chilling with my kitties, getting some fresh air or streaming!</p>
+                        <p className="aboutInfoDescription">I’m a passionate fullstack developer and UI/UX Designer based in Victoria, BC! I love solving hard problems and transfering them into beautiful and functional solutions!<br /><br />My interest in web development and design started in the summer of 2021 and since then I have worked extremely hard to become a fantastic developer and designer!<br /><br />Currently I'm in Buildspace N&W, working on Morph, an AI/ML education platform.!<br /><br />When I’m not staring at my computer I am chilling with my kitties and getting some fresh air</p>
                     </div>
                 </div>
             </section> 
