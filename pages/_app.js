@@ -30,6 +30,7 @@ function MyApp({ Component, pageProps, router }) {
         <link rel="icon" href="/logo.png" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossOrigin="anonymous" referrerPolicy="no-referrer" />
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+        <meta name="google-site-verification" content="LUUGlHbdcxo-7-5P56_CoGTj01F4p3NV82x-mXu2CfE" />
       </Head>
       <Component isFirstMount={isFirstMount} {...pageProps} />
     </AnimatePresence>
