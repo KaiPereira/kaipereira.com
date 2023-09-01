@@ -1,5 +1,16 @@
 [
     {
+        "backgroundColor": "rgb(15, 23, 42)",
+        "header": "Re-Auth",
+        "shortDescription": "Extremely simple authentication and authorization for MongoDB and React applications!",
+        "tags": [
+            "UI",
+            "App"
+        ],
+        "mockup": "/reauthSite.png",
+        "link": "https://www.re-auth.com/"
+    },
+    {
         "backgroundColor": "rgb(70, 38, 210)",
         "header": "Morph",
         "shortDescription": "An interactive programming education platform. Kind of like freecodecamp for machine learning!",
