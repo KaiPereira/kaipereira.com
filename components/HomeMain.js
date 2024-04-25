@@ -44,23 +44,6 @@ export default function HomeMain(props) {
         }))
     }, [])
 
-    // Blog Articles
-    React.useEffect(() => {
-
-        changeBlogArticles(props.posts.map((post, index) => {
-            return (
-                <BlogArticleCard 
-                    thumbnail={post.coverImage}
-                    header={post.title}
-                    date={post.dateAdded}
-                    time="3 min read"
-                    link={post.slug}
-                    key={index}
-                />
-            )
-        }))
-
-    }, [])
 
 
 
@@ -148,7 +131,78 @@ export default function HomeMain(props) {
                 <div className="blogHome">
                     <h4>Blog</h4>
                     <div className="blogHomeArticles" style={{left: `calc(${carouselPosition} * var(--slider-value) + 25px)`}}>
-                        {blogArticles}
+                        <a href="https://kai-pereira.hashnode.dev/learning-simplified" target="_blank" rel="noreferrer">
+                            <div className="blogArticleCardHover">
+                            <div className="blogArticleCard">
+                                <img src="https://cdn.hashnode.com/res/hashnode/image/unsplash/iulnjpZyWnc/upload/v1654443238404/KgOYSIqqu.jpeg" className="articleCardThumbnail" alt="Blog Article Card Thumbnail" />
+                                <p className="articleCardHeader">The Best Way to Learn UI Design in 2022 Simplified</p>
+                                <div className="blogArticleCardInfo">
+                                    <p className="articleCardDate">Jun 04, 2022</p>
+                                    <p className="articleCardTime">3 min read</p>
+                                </div>
+                            </div>
+                            </div>
+                        </a>
+                        <a href="https://kai-pereira.hashnode.dev/expert-elements" target="_blank" rel="noreferrer">
+                            <div className="blogArticleCardHover">
+                            <div className="blogArticleCard">
+                                <img src="https://cdn.hashnode.com/res/hashnode/image/unsplash/qDG7XKJLKbs/upload/v1654361299960/1JQ1UFER7.jpeg" className="articleCardThumbnail" alt="Blog Article Card Thumbnail" />
+                                <p className="articleCardHeader">9 Expert Level CSS Elements To Master in 2022</p>
+                                <div className="blogArticleCardInfo">
+                                    <p className="articleCardDate">Jun 03, 2022</p>
+                                    <p className="articleCardTime">3 min read</p>
+                                </div>
+                            </div>
+                            </div>
+                        </a>
+                        <a href="https://kai-pereira.hashnode.dev/css-frameworks" target="_blank" rel="noreferrer">
+                            <div className="blogArticleCardHover">
+                            <div className="blogArticleCard">
+                                <img src="https://cdn.hashnode.com/res/hashnode/image/unsplash/_t-l5FFH8VA/upload/v1654267686124/BkomEx2F8.jpeg" className="articleCardThumbnail" alt="Blog Article Card Thumbnail" />
+                                <p className="articleCardHeader">The Top 5 CSS Frameworks for Your Future Projects</p>
+                                <div className="blogArticleCardInfo">
+                                    <p className="articleCardDate">Jun 02, 2022</p>
+                                    <p className="articleCardTime">3 min read</p>
+                                </div>
+                            </div>
+                            </div>
+                        </a>
+                        <a href="https://kai-pereira.hashnode.dev/framework-competition" target="_blank" rel="noreferrer">
+                            <div className="blogArticleCardHover">
+                            <div className="blogArticleCard">
+                                <img src="https://cdn.hashnode.com/res/hashnode/image/unsplash/0qvBNep1Y04/upload/v1654180919308/cKAQBvjV3.jpeg" className="articleCardThumbnail" alt="Blog Article Card Thumbnail" />
+                                <p className="articleCardHeader">React vs Angular vs Vue: Which One is Better?</p>
+                                <div className="blogArticleCardInfo">
+                                    <p className="articleCardDate">Jun 01, 2022</p>
+                                    <p className="articleCardTime">3 min read</p>
+                                </div>
+                            </div>
+                            </div>
+                        </a>
+                        <a href="https://kai-pereira.hashnode.dev/learn-frontent" target="_blank" rel="noreferrer">
+                            <div className="blogArticleCardHover">
+                            <div className="blogArticleCard">
+                                <img src="https://cdn.hashnode.com/res/hashnode/image/unsplash/webyw4NsFPg/upload/v1654091812786/Bcf3-fwqE.jpeg" className="articleCardThumbnail" alt="Blog Article Card Thumbnail" />
+                                <p className="articleCardHeader">The Best Way to Learn HTML, CSS, JavaScript Simplified!</p>
+                                <div className="blogArticleCardInfo">
+                                    <p className="articleCardDate">May 31, 2022</p>
+                                    <p className="articleCardTime">3 min read</p>
+                                </div>
+                            </div>
+                            </div>
+                        </a>
+                        <a href="https://kai-pereira.hashnode.dev/design-trends" target="_blank" rel="noreferrer">
+                            <div className="blogArticleCardHover">
+                            <div className="blogArticleCard">
+                                <img src="https://cdn.hashnode.com/res/hashnode/image/unsplash/zepnJQycr4U/upload/v1654008415964/N1aANrrWV.jpeg" className="articleCardThumbnail" alt="Blog Article Card Thumbnail" />
+                                <p className="articleCardHeader">What are the Next Trends in UI Design Going to Be!</p>
+                                <div className="blogArticleCardInfo">
+                                    <p className="articleCardDate">May 30, 2022</p>
+                                    <p className="articleCardTime">3 min read</p>
+                                </div>
+                            </div>
+                            </div>
+                        </a>
                     </div>
                     <div className="blogArticleArrowsAlign">
                         <div className="blogArticleArrows">
