@@ -19,7 +19,7 @@ export default function WorkCard(props) {
                         {tagElements}
                     </div>
                 </div>
-                <img src={props.mockup} alt={`${props.header} Mockup`} />
+                <img src={props.mockup} alt={`${props.header} Mockup`} className={props.header == "Designr Ink" && "designrInkCard"}/>
             </div>
         </a>
     )
