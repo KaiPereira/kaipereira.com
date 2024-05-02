@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "TINA_PUBLIC_IS_LOCAL=true tinacms dev -c \"next dev\"",
+    "build": "tinacms build && next build",
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
@@ -20,9 +20,12 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-markdown": "^8.0.3",
-    "sass": "^1.54.0"
+    "sass": "^1.54.0",
+    "tinacms": "^1.6.3"
   },
   "devDependencies": {
+    "@tinacms/cli": "^1.5.45",
+    "@types/node": "^20.12.8",
     "eslint": "8.20.0",
     "eslint-config-next": "12.2.3"
   }
