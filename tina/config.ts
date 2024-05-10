@@ -41,6 +41,12 @@ export default defineConfig({
             required: true,
           },
           {
+            type: "image",
+            name: "thumbnail",
+            label: "Thumbnail",
+            required: true,
+          },
+          {
             type: "rich-text",
             name: "body",
             label: "Body",

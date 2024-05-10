@@ -55,48 +55,39 @@ export default function Blog({ posts }) {
 }
 
 export async function getStaticProps(context) {
-    let allArticlesFetched = false
-    let allArticles = []
-    let page = 0
+    const fs = require("fs")
+    const path = require("path")
 
-    const client = new ApolloClient({
-        uri: 'https://api.hashnode.com/',
-        cache: new InMemoryCache(),
-    })
+    // Get all posts
+    const posts = path.join(process.cwd(), 'content', 'posts');
+
+    // Grab all files inside
+    const files = fs.readdirSync(posts);
+
+    // Loop over all the files and put them into an array
+    let fileContents = []
+
+    files.forEach((file) => {
+        // Get the full file path
+        const filePath = path.join(posts, file);
+
+        // Read the content of the file
+        const content = fs.readFileSync(filePath, 'utf-8');
+        const splitContent = content.split('\n')
+        const title = splitContent[1].replace("title: ", "")
+        const body = splitContent.slice(4)
 
 
-    while (!allArticlesFetched) {
-        var { data } = await client.query({
-            query: gql`
-              query GetPosts {
-                user(username: "kaip") {
-                  publication {
-                    posts(page: ${page}) {
-                      _id
-                      coverImage
-                      slug
-                      title
-                      brief
-                      dateAdded
-                    }
-                  }
-                }
-              }
-            `,
-          })
+        fileContents.push({
+            title: title,
+            body: body
+        })
+    });
 
-          page = page + 1
-          allArticles.push(data.user.publication.posts)
-
-          if (data.user.publication.posts.length == 0) {
-            allArticlesFetched = true
-          }
-    }
-
-  
+    
     return {
         props: {
-            posts: allArticles
+            posts: fileContents
         } 
     }
 }
