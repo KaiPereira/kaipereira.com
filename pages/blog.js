@@ -3,8 +3,8 @@ import Nav from "../components/Nav"
 import CustomCursor from "../components/CustomCursor"
 import Footer from "../components/Footer";
 import BlogMain from "../components/BlogMain";
-import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
 import { motion } from "framer-motion"
+import { getAllPosts } from "../lib/posts.ts";
 
 
 export default function Blog({ posts }) {
@@ -55,39 +55,12 @@ export default function Blog({ posts }) {
 }
 
 export async function getStaticProps(context) {
-    const fs = require("fs")
-    const path = require("path")
-
-    // Get all posts
-    const posts = path.join(process.cwd(), 'content', 'posts');
-
-    // Grab all files inside
-    const files = fs.readdirSync(posts);
-
-    // Loop over all the files and put them into an array
-    let fileContents = []
-
-    files.forEach((file) => {
-        // Get the full file path
-        const filePath = path.join(posts, file);
-
-        // Read the content of the file
-        const content = fs.readFileSync(filePath, 'utf-8');
-        const splitContent = content.split('\n')
-        const title = splitContent[1].replace("title: ", "")
-        const body = splitContent.slice(4)
-
-
-        fileContents.push({
-            title: title,
-            body: body
-        })
-    });
-
+    
+    const allPosts = getAllPosts()
     
     return {
         props: {
-            posts: fileContents
+            posts: allPosts
         } 
     }
 }
