@@ -16,7 +16,7 @@ export default function BlogArticle({ post }) {
     function cursorEnter() {
         changeCursorVariant("text")
     }
-    
+
     function cursorEnterBlob(cursorColorParam) {
         changeCursorVariant("blob")
         changeCursorColor(cursorColorParam)
@@ -47,7 +47,7 @@ export default function BlogArticle({ post }) {
                         <div className="post-markdown" dangerouslySetInnerHTML={{ __html: post.html }}></div>
                         <a href="https://x.com/KaiPereira_" target="_blank" rel="noreferrer">
                             <button className="featuredWorkButton post-button" onMouseEnter={cursorEnter} onMouseLeave={cursorLeave}>
-                                <p>Catch me on Twitter <i class="fa-solid fa-arrow-up-right-from-square"></i></p>
+                                <p>Catch me on Twitter <i className="fa-solid fa-arrow-up-right-from-square"></i></p>
                             </button>
                         </a>
                     </div>
