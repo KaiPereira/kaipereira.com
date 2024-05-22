@@ -28,9 +28,9 @@ export default function Nav(props) {
                     <Link href="/about">
                         <a className="navigationElement" onMouseEnter={props.cursorEnter} onMouseLeave={props.cursorLeave}>About</a>
                     </Link>
-                    {/* <Link href="/blog">
+                    <Link href="/blog">
                         <a className="navigationElement" onMouseEnter={props.cursorEnter} onMouseLeave={props.cursorLeave}>Blog</a>
-                    </Link> */}
+                    </Link>
                     <Link href="/contact">
                         <button onMouseEnter={props.cursorEnter} onMouseLeave={props.cursorLeave}>Get In Touch</button>
                     </Link>

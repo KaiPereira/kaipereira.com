@@ -39,6 +39,7 @@ function MyApp({ Component, pageProps, router }) {
         <meta property="og:description" content="Hi! I'm Kai, a passionate fullstack developer and UI/UX Designer based in Victoria, BC! I love solving hard problems and transfering them into beautiful and functional solutions!" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/it's me.png" />
+        
         {/* Twitter card tags */}
         <meta name="twitter:title" content="Kai Pereira | Designer and Developer based in Victoria, BC" />
         <meta name="twitter:description" content="Hi! I'm Kai, a passionate fullstack developer and UI/UX Designer based in Victoria, BC! I love solving hard problems and transfering them into beautiful and functional solutions!" />

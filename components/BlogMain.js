@@ -7,15 +7,14 @@ export default function BlogMain(props) {
 
     // Blog Articles
     React.useEffect(() => {
-
-        changeBlogArticles([].concat(...props.posts).map((post, index) => {
+        changeBlogArticles(props.posts.map((post, index) => {
             return (
                 <BlogArticleCard 
-                    thumbnail={post.coverImage}
+                    thumbnail={post.thumbnail}
                     header={post.title}
-                    date={post.dateAdded}
-                    time="3 min read"
-                    link={post.slug}
+                    date={post.date}
+                    time={post.time}
+                    link={post.url}
                     key={index}
                 />
             )

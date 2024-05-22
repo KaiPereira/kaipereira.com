@@ -3,8 +3,8 @@ import Nav from "../components/Nav"
 import CustomCursor from "../components/CustomCursor"
 import Footer from "../components/Footer";
 import BlogMain from "../components/BlogMain";
-import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
 import { motion } from "framer-motion"
+import { getAllPosts } from "../lib/posts.ts";
 
 
 export default function Blog({ posts }) {
@@ -55,48 +55,12 @@ export default function Blog({ posts }) {
 }
 
 export async function getStaticProps(context) {
-    let allArticlesFetched = false
-    let allArticles = []
-    let page = 0
-
-    const client = new ApolloClient({
-        uri: 'https://api.hashnode.com/',
-        cache: new InMemoryCache(),
-    })
-
-
-    while (!allArticlesFetched) {
-        var { data } = await client.query({
-            query: gql`
-              query GetPosts {
-                user(username: "kaip") {
-                  publication {
-                    posts(page: ${page}) {
-                      _id
-                      coverImage
-                      slug
-                      title
-                      brief
-                      dateAdded
-                    }
-                  }
-                }
-              }
-            `,
-          })
-
-          page = page + 1
-          allArticles.push(data.user.publication.posts)
-
-          if (data.user.publication.posts.length == 0) {
-            allArticlesFetched = true
-          }
-    }
-
-  
+    
+    const allPosts = getAllPosts()
+    
     return {
         props: {
-            posts: allArticles
+            posts: allPosts
         } 
     }
 }

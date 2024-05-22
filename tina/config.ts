@@ -41,6 +41,30 @@ export default defineConfig({
             required: true,
           },
           {
+            type: "string",
+            name: "date",
+            label: "Date",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "time",
+            label: "Time",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "description",
+            label: "Description",
+            required: true,
+          },
+          {
+            type: "image",
+            name: "thumbnail",
+            label: "Thumbnail",
+            required: true,
+          },
+          {
             type: "rich-text",
             name: "body",
             label: "Body",
